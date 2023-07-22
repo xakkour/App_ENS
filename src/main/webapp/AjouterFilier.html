@@ -1,0 +1,46 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>ENS - Ajouter Etudiant</title>
+    <link rel="stylesheet" href="style/style.css">
+
+
+</head>
+<body>
+<div class="login-box">
+
+    <div class="login-box">
+        <h2>Ajouter Filier</h2>
+        <form action="/FilierListServlet" method="post">
+            <div class="user-box">
+                <input type="text" name="filier" required="">
+                <label>Filier</label>
+            </div>
+
+
+            <div class="select">
+                <select name="departement" required id="departement">
+                    <option value="hide">--Departement-- </option>
+                   <c:forEach items="${departement}" var="departement">
+                       <option value="${departement.departement}"></option>
+                   </c:forEach>
+                </select>
+            </div>
+            <br><br>
+
+
+               <br><br>
+
+                   <input type="submit"class="searchTerm" name="action" value="ajouter" />
+
+
+        </form>
+    </div>
+
+
+</div>
+</body>
+</html>
